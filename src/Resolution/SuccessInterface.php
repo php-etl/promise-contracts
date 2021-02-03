@@ -2,9 +2,6 @@
 
 namespace Kiboko\Contract\Promise\Resolution;
 
-/**
- * @internal
- */
 interface SuccessInterface extends ResolutionInterface
 {
 }
