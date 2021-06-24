@@ -2,6 +2,6 @@
 
 namespace Kiboko\Contract\Promise\Resolution;
 
-interface FailureInterface extends ResolutionInterface
+interface FailureInterface extends ResolutionInterface, ResolvedInterface
 {
 }
