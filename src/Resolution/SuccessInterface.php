@@ -2,6 +2,10 @@
 
 namespace Kiboko\Contract\Promise\Resolution;
 
+/**
+ * @template Type
+ * @extends ResolvedInterface<Type>
+ */
 interface SuccessInterface extends ResolutionInterface, ResolvedInterface
 {
 }
