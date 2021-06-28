@@ -8,4 +8,6 @@ namespace Kiboko\Contract\Promise\Resolution;
  */
 interface SuccessInterface extends ResolutionInterface, ResolvedInterface
 {
+    /** @return Type */
+    public function value();
 }

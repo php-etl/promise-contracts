@@ -4,12 +4,14 @@ namespace Kiboko\Contract\Promise;
 
 /**
  * @api
- * @template Type
- * @extends PromiseInterface<Type>
+ * @template ExpectationType
+ * @template ExceptionType of \Throwable
+ * @extends PromiseInterface<ExpectationType, ExceptionType>
  */
 interface ResolvablePromiseInterface extends PromiseInterface
 {
-    /** @param Type $value */
+    /** @param ExpectationType $value */
     public function resolve($value): void;
+    /** @param ExceptionType $failure */
     public function fail(\Throwable $failure): void;
 }

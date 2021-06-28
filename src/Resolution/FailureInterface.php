@@ -3,8 +3,10 @@
 namespace Kiboko\Contract\Promise\Resolution;
 
 /**
- * @extends ResolvedInterface<\Throwable>
+ * @template Type of \Throwable
+ * @extends ResolvedInterface<Type>
  */
 interface FailureInterface extends ResolutionInterface, ResolvedInterface
 {
+    public function error(): \Throwable;
 }

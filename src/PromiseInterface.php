@@ -4,19 +4,28 @@ namespace Kiboko\Contract\Promise;
 
 /**
  * @api
- * @template Type
+ * @template ExpectationType
+ * @template ExceptionType of \Throwable
  */
 interface PromiseInterface
 {
-    /** @return PromiseInterface<Type> */
+    /**
+     * @param callable(ExpectationType): (ExpectationType|PromiseInterface<mixed, \Throwable>) $callback
+     *
+     * @return PromiseInterface<ExpectationType, ExceptionType>
+     */
     public function then(callable $callback): PromiseInterface;
-    /** @return PromiseInterface<Type> */
+    /**
+     * @param callable(ExceptionType): (\Throwable|PromiseInterface<mixed, \Throwable>) $callback
+     *
+     * @return PromiseInterface<ExpectationType, ExceptionType>
+     */
     public function failure(callable $callback): PromiseInterface;
-    /** @return DeferredInterface<Type> */
+    /** @return DeferredInterface<ExpectationType, ExceptionType> */
     public function defer(): DeferredInterface;
     public function isResolved(): bool;
     public function isSuccess(): bool;
     public function isFailure(): bool;
-    /** @return Resolution\ResolutionInterface|Resolution\ResolvedInterface<Type> */
+    /** @return Resolution\ResolutionInterface|Resolution\ResolvedInterface<ExpectationType>|Resolution\ResolvedInterface<ExceptionType> */
     public function resolution(): Resolution\ResolutionInterface|Resolution\ResolvedInterface;
 }

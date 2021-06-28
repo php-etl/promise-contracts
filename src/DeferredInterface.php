@@ -4,12 +4,21 @@ namespace Kiboko\Contract\Promise;
 
 /**
  * @api
- * @template Type
+ * @template ExpectationType
+ * @template ExceptionType of \Throwable
  */
 interface DeferredInterface
 {
-    /** @return DeferredInterface<Type> */
+    /**
+     * @param callable(ExpectationType): (ExpectationType|PromiseInterface<mixed, \Throwable>) $callback
+     *
+     * @return DeferredInterface<ExpectationType, ExceptionType>
+     */
     public function then(callable $callback): DeferredInterface;
-    /** @return DeferredInterface<Type> */
+    /**
+     * @param callable(ExceptionType): (\Throwable|PromiseInterface<mixed, \Throwable>) $callback
+     *
+     * @return DeferredInterface<ExpectationType, ExceptionType>
+     */
     public function failure(callable $callback): DeferredInterface;
 }
