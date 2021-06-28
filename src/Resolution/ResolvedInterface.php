@@ -9,6 +9,6 @@ use Kiboko\Contract\Promise\DeferredInterface;
  */
 interface ResolvedInterface extends ResolutionInterface
 {
-    /** @param callable(Type): Type $callback */
+    /** @param callable(Type): void $callback */
     public function apply(callable $callback): void;
 }
