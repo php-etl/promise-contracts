@@ -11,13 +11,13 @@ namespace Kiboko\Contract\Promise;
 interface PromiseInterface extends DeferredInterface
 {
     /**
-     * @param callable(ExpectationType): (ExpectationType|DeferredInterface<mixed, \Throwable>) $callback
+     * @param callable(ExpectationType): void $callback
      *
      * @return PromiseInterface<ExpectationType, ExceptionType>
      */
     public function then(callable $callback): PromiseInterface;
     /**
-     * @param callable(ExceptionType): (\Throwable|DeferredInterface<mixed, \Throwable>) $callback
+     * @param callable(ExceptionType): void $callback
      *
      * @return PromiseInterface<ExpectationType, ExceptionType>
      */
