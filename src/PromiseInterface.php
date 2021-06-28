@@ -7,7 +7,7 @@ namespace Kiboko\Contract\Promise;
  * @template ExpectationType
  * @template ExceptionType of \Throwable
  */
-interface PromiseInterface
+interface PromiseInterface extends DeferredInterface
 {
     /**
      * @param callable(ExpectationType): (ExpectationType|PromiseInterface<mixed, \Throwable>) $callback
