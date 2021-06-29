@@ -2,8 +2,6 @@
 
 namespace Kiboko\Contract\Promise\Resolution;
 
-use Kiboko\Contract\Promise\DeferredInterface;
-
 /**
  * @template Type
  */

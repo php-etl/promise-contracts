@@ -8,5 +8,6 @@ namespace Kiboko\Contract\Promise\Resolution;
  */
 interface FailureInterface extends ResolutionInterface, ResolvedInterface
 {
+    /** @return Type */
     public function error(): \Throwable;
 }
